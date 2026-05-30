@@ -1,0 +1,60 @@
+/* ============================================================
+   CENTAUR — design tokens
+   Monochrome instrument system. Two themes.
+   Hex values are exact equivalents of the oklch source.
+   Apply a theme by setting [data-theme="dark"|"light"] on <html>.
+   ============================================================ */
+
+:root {
+  /* Type */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Layout */
+  --col: 540px;          /* max content column width            */
+  --pad: 24px;           /* page side padding (mobile)           */
+  --pad-wide: 32px;      /* page side padding (>= 640px)         */
+  --header-h: 52px;
+
+  /* Radius — minimal, precision-instrument feel */
+  --r-sm: 2px;
+  --r-md: 3px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --dur-fast: 0.15s;     /* hover / color shifts                 */
+  --dur-move: 0.5s;      /* needle travel along the axis         */
+  --dur-rise: 0.4s;      /* view entrance (transform only)       */
+}
+
+/* ---------- Dark (default) ---------- */
+[data-theme="dark"] {
+  --bg:          oklch(0.165 0.004 240);  /* #0d0f10 */
+  --surface:     oklch(0.205 0.004 240);  /* #161719 */
+  --surface-2:   oklch(0.238 0.004 240);  /* #1d1f20 */
+  --line:        oklch(0.305 0.004 240);  /* #2d2f31 */
+  --line-soft:   oklch(0.255 0.004 240);  /* #212325 */
+  --line-strong: oklch(0.42 0.004 240);   /* #4b4d4f */
+  --fg:          oklch(0.935 0.002 240);  /* #e8eaeb */
+  --fg-dim:      oklch(0.66 0.004 240);   /* #909294 */
+  --fg-faint:    oklch(0.475 0.004 240);  /* #5a5c5e */
+  --inv-bg:      var(--fg);               /* inverted (primary btn bg)   */
+  --inv-fg:      var(--bg);               /* inverted (primary btn text) */
+  color-scheme: dark;
+}
+
+/* ---------- Light ---------- */
+[data-theme="light"] {
+  --bg:          oklch(0.967 0.002 240);  /* #f3f4f5 */
+  --surface:     oklch(0.998 0.001 240);  /* #fefeff */
+  --surface-2:   oklch(0.945 0.003 240);  /* #ebedef */
+  --line:        oklch(0.882 0.004 240);  /* #d6d8da */
+  --line-soft:   oklch(0.922 0.003 240);  /* #e3e5e7 */
+  --line-strong: oklch(0.76 0.005 240);   /* #aeb1b4 */
+  --fg:          oklch(0.225 0.006 240);  /* #191c1e */
+  --fg-dim:      oklch(0.455 0.005 240);  /* #545759 */
+  --fg-faint:    oklch(0.63 0.004 240);   /* #87898b */
+  --inv-bg:      var(--fg);
+  --inv-fg:      var(--bg);
+  color-scheme: light;
+}
